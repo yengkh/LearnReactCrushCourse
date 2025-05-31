@@ -2,6 +2,9 @@ import { useState } from "react";
 import JobsList from "../data/BrowseJobs.json";
 import Card from "./Card";
 import { FaMapMarker } from "react-icons/fa";
+import { MdArrowOutward } from "react-icons/md";
+import { Link } from "react-router-dom";
+import { IoMdArrowForward } from "react-icons/io";
 
 const BrowsJobs = () => {
   const [showJobDescription, setShowJobDescription] = useState<
@@ -42,16 +45,27 @@ const BrowsJobs = () => {
                 <FaMapMarker className="inline text-lg mb-1" />
                 <span>{item.location}</span>
               </p>
-              <a
-                href={`job/${item.id}`}
-                className="w-fit py-1 rounded bg-blue-600 text-white px-3 "
+
+              <Link
+                to={`job/${item.id}`}
+                className=" py-1 rounded bg-blue-600 text-white px-3 hover:shadow-xl transition-all duration-300 flex items-center gap-1 hover:gap-2"
               >
-                Read More
-              </a>
+                <span>Read More</span>
+                <IoMdArrowForward className="inline " />
+              </Link>
             </div>
           </Card>
         ))}
       </section>
+      <div className="flex items-center justify-center my-4">
+        <Link
+          to={"/jobs"}
+          className="px-8 py-1 rounded bg-indigo-500 text-white text-center"
+        >
+          <span>Brows all jobs</span>
+          <MdArrowOutward className="inline ml-2" />
+        </Link>
+      </div>
     </>
   );
 };
