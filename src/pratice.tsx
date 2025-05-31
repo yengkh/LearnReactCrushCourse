@@ -8,7 +8,7 @@ const Pratice = () => {
   // Style
   const sumStyel = {
     color: "red",
-    "font-size": "34px",
+    fontSize: "34px",
   };
 
   // Return

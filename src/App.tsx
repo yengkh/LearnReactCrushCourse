@@ -1,8 +1,8 @@
-import Pratice from "./pratice";
+import HomePage from "./home";
 const App = () => {
   return (
     <>
-      <Pratice />
+      <HomePage />
     </>
   );
 };
